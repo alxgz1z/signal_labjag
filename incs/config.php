@@ -159,7 +159,7 @@ define('SESSION_TIMEOUT_SECONDS', 28800);
 
 if (session_status() === PHP_SESSION_NONE) {
 	// Configure session cookies for HTTPS
-	session_set_cookie_params(0, '/', '', false, true); // lifetime, path, domain, secure=false (temp), httponly
+	session_set_cookie_params(0, '/', '', true, true); // lifetime, path, domain, secure (site is HTTPS-only via Cloudflare), httponly
 	session_start();
 }
 
